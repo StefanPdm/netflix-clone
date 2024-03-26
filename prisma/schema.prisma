@@ -33,10 +33,10 @@ userId String @db.ObjectId
 type String
 provider String
 providerAccountId String
-refresh_Token String? @db.String
-access_Token String? @db.String
+refresh_token String? @db.String
+access_token String? @db.String
 expires_at Int? 
-token_typ String?
+token_type String?
 scope String?
 id_token String? @db.String
 session_state String?
