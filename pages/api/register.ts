@@ -3,6 +3,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 import prismadb from "@/lib/prismadb";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  // only allow POST requests
   if (req.method !== "POST") {
     // 405 Method Not Allowed: The request method is not supported for the requested resource.
     return res.status(405).end();

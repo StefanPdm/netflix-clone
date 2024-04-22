@@ -5,6 +5,8 @@ import { compare } from "bcrypt";
 
 import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
+
+// npm install @next-auth/prisma-adapter  - for AUTH with Github or Google
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 
 export default NextAuth({
