@@ -1,5 +1,5 @@
 import useBillboard from '@/hooks/useBillboard';
-import logoSymbol from '/public/images/Netflix-Symbol.png';
+import logoSymbol from '@/public/images/Netflix-Symbol.png';
 
 import Image from 'next/image';
 
