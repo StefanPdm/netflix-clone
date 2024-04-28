@@ -33,6 +33,8 @@ export default function MovieCard({ movie, lastElement = false }: MovieCardProps
         shadow-xl
         '
         src={movie.thumbnailUrl}
+        width={500}
+        height={100}
         alt='thumbnail'
       />
       <div
@@ -55,8 +57,7 @@ export default function MovieCard({ movie, lastElement = false }: MovieCardProps
          `}>
         <Image
           className='
-        
-        object-cover
+                object-cover
         transition
         duration
         shadow-xl
@@ -64,8 +65,11 @@ export default function MovieCard({ movie, lastElement = false }: MovieCardProps
         w-full
         h-[12vw]
         '
+          width={500}
+          height={100}
           src={movie.thumbnailUrl}
           alt='thumbnail2'
+          sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
         />
         <div className='bg-zinc-800 p-2 lg:p-3 w-full transition shadow-md rounded-b-md'>
           <div className='flex items-center gap-3'>

@@ -19,7 +19,7 @@ export default function MovieList({ data: movieList, title, toShuffle }: MovieLi
     <div className='px-4 md:px-12 mt-2 md:mt-10 space-y-8'>
       <div>
         <p className='text-md md:text-xl lg:text-2xl font-semibold mb-4'>{title}</p>
-        <div className='grid grid-cols-2 md:grid-cols-4 gap-4'>
+        <div className='grid grid-cols-2 md:grid-cols-4 gap-4 mb-5'>
           {movieList.map((movie: any, index) => (
             <MovieCard
               movie={movie}

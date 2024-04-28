@@ -31,6 +31,8 @@ export default function AccountMenu({ visible, user }: AccountMenuProps) {
             className='w-8 rounded-md'
             src={user?.image || '/images/default-blue.png'}
             alt='userImage'
+            width={100}
+            height={100}
           />
           <p className='text-sm group-hover/item:underline'>{user?.name}</p>
         </div>

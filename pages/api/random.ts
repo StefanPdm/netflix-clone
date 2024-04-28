@@ -8,7 +8,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
-    await serverAuth(req); // this is the check if user is signed in
+    await serverAuth(req, res); // this is the check if user is signed in
     // find random movie
     const movieCount = await prismadb.movie.count();
     const randomIndex = Math.floor(Math.random() * movieCount);

@@ -1,8 +1,5 @@
 import useBillboard from '@/hooks/useBillboard';
-import logoSymbol from '@/public/images/Netflix-Symbol.png';
-
 import Image from 'next/image';
-
 import CircleLoader from 'react-spinners/CircleLoader';
 import { CSSProperties, useCallback, useState } from 'react';
 import Playbutton from './Playbutton';
@@ -41,9 +38,10 @@ export default function Billboard() {
       <div className='absolute top-0 left-0 w-full bg-gradient-to-b from-transparent from-70% to-zinc-900 z-10 h-[56.25vw] max-h-[75vh]'></div>
       <div className='absolute top-[25%] xl:top-[35%] px-4 md:px-16 flex flex-col w-full z-20'>
         <Image
-          src={logoSymbol}
+          src='/images/Netflix-Symbol.png'
           alt='logoSymbol'
-          height={60}
+          width={40}
+          height={100}
           className='px-1 hidden xl:block'
         />
         <p className='text-xl md:text-5xl lg:text-7xl h-full w-[50%] font-bold drop-shadow-2xl'>

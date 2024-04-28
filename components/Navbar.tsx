@@ -1,4 +1,3 @@
-import netflixLogo from '@/public/images/logo.png';
 import Image from 'next/image';
 
 import { BsChevronDown, BsSearch, BsBell } from 'react-icons/bs';
@@ -55,19 +54,21 @@ export default function Navbar() {
          ${showBackground ? 'bg-zinc-900 bg-opacity-90' : ''}
    `}>
         <Image
-          src={netflixLogo}
+          src='/images/logo.png'
           alt='logo'
           className='h-4 lg:h-7 w-auto'
+          width={100}
+          height={100}
         />
         <div className='flex-row ml-8 gap-7 hidden lg:flex'>
-          <NavbarItem label='Home' />
+          {/* <NavbarItem label='Home' />
           <NavbarItem label='Series' />
           <NavbarItem label='Films' />
           <NavbarItem label='New & Popular' />
           <NavbarItem label='My List' />
-          <NavbarItem label='Browse by languages' />
+          <NavbarItem label='Browse by languages' /> */}
         </div>
-        <div
+        {/* <div
           onClick={toggleMobileMenu}
           className='lg:hidden flex items-center gap-2 ml-8 cursor-pointer relative'>
           <p className='text-white text-sm'>Browse</p>
@@ -75,7 +76,7 @@ export default function Navbar() {
             className={`text-white transition ${showMobilMenu ? 'rotate-180' : 'rotate-0'}`}
           />
           <MobilMenu visible={showMobilMenu} />
-        </div>
+        </div> */}
         <div className='flex ml-auto gap-7 items-center'>
           <div className='text-gray-200 hover:text-gray-300 cursor-pointer'>
             <BsSearch />

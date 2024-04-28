@@ -40,8 +40,10 @@ const Profiles = () => {
              overflow-hidden
              '>
                 <Image
-                  src={imageDefaultBlue}
+                  src='/images/default-blue.png'
                   alt='Profile'
+                  width={200}
+                  height={200}
                 />
               </div>
               <div
@@ -56,7 +58,7 @@ const Profiles = () => {
               </div>
             </div>
           </div>
-          <div onClick={() => router.push('/')}>
+          {/* <div onClick={() => router.push('/')}>
             <div className='group flex-row w-44 mx-auto'>
               <div
                 className='w-44 h-44 rounded-md flex items-center justify-center border-2
@@ -64,8 +66,10 @@ const Profiles = () => {
              overflow-hidden
              '>
                 <Image
-                  src={imageDefaultRed}
+                  src='/images/default-red.png'
                   alt='Profile'
+                  width={200}
+                  height={200}
                 />
               </div>
               <div
@@ -79,7 +83,7 @@ const Profiles = () => {
                 {' A friend'}
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
