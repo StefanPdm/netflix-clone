@@ -1,5 +1,5 @@
 import { signOut } from 'next-auth/react';
-
+import Image from 'next/image';
 interface AccountMenuProps {
   visible?: boolean;
   user?: any;
@@ -27,7 +27,7 @@ export default function AccountMenu({ visible, user }: AccountMenuProps) {
         border-gray-800'>
       <div className='flex flex-col gap-3'>
         <div className='px-3 group/item flex gap-3 items-center w-full'>
-          <img
+          <Image
             className='w-8 rounded-md'
             src={user?.image || '/images/default-blue.png'}
             alt='userImage'

@@ -3,6 +3,7 @@ import FavoriteButton from './FavoriteButton';
 import { BsChevronDown } from 'react-icons/bs';
 import { RiPlayFill } from 'react-icons/ri';
 import useInfoModal from '@/hooks/useInfoModal';
+import Image from 'next/image';
 
 interface MovieCardProps {
   movie: Record<string, any>;
@@ -16,7 +17,7 @@ export default function MovieCard({ movie, lastElement = false }: MovieCardProps
     <div
       className='group bg-zinc-900 col-span relative  h-[20vw]
         lg:h-[12vw]'>
-      <img
+      <Image
         className='
         cursor-pointer
         w-full
@@ -52,7 +53,7 @@ export default function MovieCard({ movie, lastElement = false }: MovieCardProps
          ${lastElement ? 'group-hover:-translate-x-[2vw]' : 'group-hover:translate-x-[2vw]'}
          group-hover:opacity-100
          `}>
-        <img
+        <Image
           className='
         
         object-cover
