@@ -9,8 +9,6 @@ import { FcGoogle } from 'react-icons/fc';
 import { FaGithub } from 'react-icons/fa';
 
 const Auth = () => {
-  // const router = useRouter;
-
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [username, setUsername] = useState('');
@@ -26,10 +24,8 @@ const Auth = () => {
       await signIn('credentials', {
         email,
         password,
-        // redirect: false, // not anymore needed
         callbackUrl: '/profiles',
       });
-      // router.push("/profiles");
     } catch (error) {
       console.log(error);
     }
