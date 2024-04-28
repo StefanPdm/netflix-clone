@@ -8,6 +8,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
+    await serverAuth(req); // this is the check if user is signed in
+    const movies = await prismadb.movie.findMany();
+    return res.status(200).json(movies);
   } catch (error) {
     console.error(error);
     return res.status(400).end();
