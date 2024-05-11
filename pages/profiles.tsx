@@ -1,5 +1,7 @@
-import { NextPageContext } from 'next';
+import { NextPageContext, NextApiRequest, NextApiResponse } from 'next';
 import { getSession } from 'next-auth/react';
+import { getServerSession } from 'next-auth/next';
+import { authOptions } from '../pages/api/auth/[...nextauth]';
 import Image from 'next/image';
 import useCurrentUser from '@/hooks/useCurrentUser';
 import { useRouter } from 'next/router';

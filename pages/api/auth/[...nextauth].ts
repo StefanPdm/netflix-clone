@@ -44,7 +44,7 @@ export const authOptions: AuthOptions = {
         });
 
         if (!user || !user.hashedPassword) {
-          throw new Error('Invalid email.');
+          throw new Error('Invalid email my friend.');
         }
 
         const isCorrectPassword = await compare(credentials.password, user.hashedPassword);

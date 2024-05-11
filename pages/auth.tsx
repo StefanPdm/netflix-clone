@@ -1,7 +1,9 @@
+import axios from 'axios';
 import Input from '@/components/Input';
+
 import Image from 'next/image';
 import { useCallback, useState } from 'react';
-import axios from 'axios';
+
 import { signIn } from 'next-auth/react';
 import Head from 'next/head';
 
