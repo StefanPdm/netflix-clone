@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 import Input from '@/components/Input';
 
 import Image from 'next/image';
@@ -11,46 +11,73 @@ import Head from 'next/head';
 import { FcGoogle } from 'react-icons/fc';
 import { FaGithub } from 'react-icons/fa';
 
+import { useTransition } from 'react';
+import { useRouter } from 'next/router';
+
 const Auth = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [username, setUsername] = useState('');
   const [variant, setVariant] = useState('login');
+  const [isPending, startTransition] = useTransition();
+  const [error, setError] = useState<string | null>('');
+  const router = useRouter();
 
   const toggleVariant = useCallback(() => {
     setVariant((prev) => (prev === 'login' ? 'signup' : 'login'));
+    setError('');
   }, []);
 
   const login = useCallback(async () => {
     // important: first login in code, then register
-    try {
-      await signIn('credentials', {
-        email,
-        password,
-        callbackUrl: '/profiles',
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  }, [email, password]);
+
+    startTransition(async () => {
+      try {
+        const result = await signIn('credentials', {
+          email,
+          password,
+          redirect: false,
+        });
+
+        if (result?.error) {
+          setError(result.error);
+        } else {
+          router.push('/profiles');
+        }
+      } catch (error) {
+        console.error('Login error:', error);
+        setError('An unexpected error occurred');
+      }
+    });
+  }, [email, password, router]);
 
   const register = useCallback(async () => {
+    if (!email || !password || !username) {
+      return;
+    }
     try {
-      await axios.post('/api/register', { email, password, username });
-      login();
+      const result = await axios.post('/api/register', { email, password, username });
+      if (axios.isAxiosError(error)) {
+        setError('Wrong data entered');
+      } else {
+        login();
+      }
     } catch (error) {
       console.log(error);
+      if (axios.isAxiosError(error)) {
+        setError(error.response?.data?.message || 'Email already exists');
+      } else {
+        console.log(error);
+        setError('An unexpected error occurred');
+      }
     }
-  }, [email, password, username, login]);
+  }, [email, password, username, login, error]);
 
   return (
     <>
       <Head>
         <title>Stefllix</title>
-        <meta
-          name='description'
-          content='Netflix clone built with Next.js and Tailwind CSS'
-        />
+        <meta content='Netflix clone built with Next.js and Tailwind CSS' />
         <meta
           name='google-site-verification'
           content='6I8DAbp2-fEP3Ck3342aLiXR7XzAZWZs4XNoanO95TM'
@@ -68,7 +95,7 @@ const Auth = () => {
             />
           </nav>
           <div className='flex justify-center'>
-            <div className='bg-black bg-opacity-70 p-16 self-center mt-2 lg:w-2/5 lg:max-w-md rounded-md w-full h-[560px]'>
+            <div className='bg-black bg-opacity-70 p-16 self-center mt-2 lg:w-2/5 lg:max-w-md rounded-md w-full h-[560px] relative'>
               <h2 className='text-white text-4xl mb-8 font-semibold'>
                 {variant === 'login' ? 'Sign In' : 'Create an account'}
               </h2>
@@ -104,11 +131,24 @@ const Auth = () => {
                   }}
                 />
               </div>
+
+              {error && <div className=' text-red-600 px-4 absolute'>{error}</div>}
+
+              <div>
+                <div
+                  className={`text-white text-center absolute top-72 transition-all duration-150 ${
+                    isPending ? 'opacity-1' : 'opacity-0'
+                  }`}>
+                  Please wait...
+                </div>
+              </div>
+
               <button
                 onClick={variant === 'login' ? login : register}
+                disabled={isPending}
                 className='
                   bg-red-600 py-3 text-white rounded-md w-full  mt-12
-                  hover:bg-red-700 transition-all duration-300
+                  hover:bg-red-700 transition-all duration-300 disabled:bg-neutral-500
                   '>
                 {variant === 'login' ? 'Login' : 'Register'}
               </button>

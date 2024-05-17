@@ -35,6 +35,7 @@ export const authOptions: AuthOptions = {
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) {
           throw new Error('Email and password are required');
+          // return new Response('Email and password are required');
         }
 
         const user = await prismadb.user.findUnique({
