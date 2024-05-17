@@ -46,7 +46,7 @@ const Auth = () => {
   return (
     <>
       <Head>
-        <title>Netflix Clone</title>
+        <title>Stefllix</title>
         <meta
           name='description'
           content='Netflix clone built with Next.js and Tailwind CSS'
@@ -60,7 +60,7 @@ const Auth = () => {
         <div className='bg-black w-full h-full lg:bg-opacity-50'>
           <nav className='px-12 py-5'>
             <Image
-              src='/images/logo.png'
+              src='/images/logo-2.png'
               alt='logo'
               width={200}
               height={54}

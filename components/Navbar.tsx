@@ -54,7 +54,7 @@ export default function Navbar() {
          ${showBackground ? 'bg-zinc-900 bg-opacity-90' : ''}
    `}>
         <Image
-          src='/images/logo.png'
+          src='/images/logo-2.png'
           alt='logo'
           className='h-4 lg:h-7 w-auto'
           width={100}
