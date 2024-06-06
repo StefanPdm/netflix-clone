@@ -11,6 +11,7 @@ interface MovieCardProps {
 }
 
 export default function MovieCard({ movie, lastElement = false }: MovieCardProps) {
+  console.log('movie:', movie);
   const router = useRouter();
   const { openModal } = useInfoModal();
   return (
@@ -95,6 +96,7 @@ export default function MovieCard({ movie, lastElement = false }: MovieCardProps
               <BsChevronDown className='group-hover/item:text-neutral-300' />
             </div>
           </div>
+          <div className='mt-4'>{movie?.title}</div>
           <p className='font-semibold mt-4 text-[10px] md:text-xs lg:text-sm flex flex-wrap gap-3 items-center'>
             <span className='text-green-400  mb-1'>{movie?.consensus}% Consensus</span>
             <span className='border-neutral-500 border px-2 font-normal text-neutral-500'>
