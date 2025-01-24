@@ -42,7 +42,7 @@ export default function Home() {
         />
         <meta
           name='google-site-verification'
-          content='6I8DAbp2-fEP3Ck3342aLiXR7XzAZWZs4XNoanO95TM'
+          content='47SIeUaOiPuUBAyT8BmgTIqtidTc-ADCRKkFzjj0TOM'
         />
       </Head>
       <InfoModal
