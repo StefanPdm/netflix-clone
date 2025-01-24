@@ -40,7 +40,7 @@ export default function AccountMenu({ visible, user }: AccountMenuProps) {
         <div
           className='px-3 text-center text-sm hover:underline'
           onClick={handleSignOut}>
-          Sign out of Netflix
+          Sign out of Stefllix
         </div>
       </div>
     </div>

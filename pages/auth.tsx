@@ -77,10 +77,10 @@ const Auth = () => {
     <>
       <Head>
         <title>Stefllix</title>
-        <meta content='Netflix clone built with Next.js and Tailwind CSS' />
+        <meta content='Streaming clone built with Next.js and Tailwind CSS' />
         <meta
           name='google-site-verification'
-          content='6I8DAbp2-fEP3Ck3342aLiXR7XzAZWZs4XNoanO95TM'
+          content='47SIeUaOiPuUBAyT8BmgTIqtidTc-ADCRKkFzjj0TOM'
         />
       </Head>
       <div className="relative h-full w-full bg-[url('/images/hero-english.jpg')] bg-no-repeat bg-cover bg-center bg-fixed">
