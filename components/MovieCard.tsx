@@ -11,7 +11,6 @@ interface MovieCardProps {
 }
 
 export default function MovieCard({ movie, lastElement = false }: MovieCardProps) {
-  console.log('movie:', movie);
   const router = useRouter();
   const { openModal } = useInfoModal();
   return (

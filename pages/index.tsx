@@ -35,10 +35,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Netflix Clone</title>
+        <title>Streaming Clone</title>
         <meta
           name='description'
-          content='Netflix clone built with Next.js and Tailwind CSS'
+          content='Streaming clone built with Next.js and Tailwind CSS'
         />
         <meta
           name='google-site-verification'

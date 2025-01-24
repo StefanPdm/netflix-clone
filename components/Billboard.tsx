@@ -38,7 +38,7 @@ export default function Billboard() {
       <div className='absolute top-0 left-0 w-full bg-gradient-to-b from-transparent from-70% to-zinc-900 z-10 h-[56.25vw] max-h-[75vh]'></div>
       <div className='absolute top-[25%] xl:top-[35%] px-4 md:px-16 flex flex-col w-full z-20'>
         <Image
-          src='/images/Netflix-Symbol.png'
+          src='/images/Steflix-Symbol.png'
           alt='logoSymbol'
           width={40}
           height={100}
